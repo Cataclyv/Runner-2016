@@ -10,12 +10,10 @@ protected :
 
 public:
     MovableElement(int x, int y, int w, int h, int dx, int dy);
-<<<<<<< Updated upstream
-    void move();
-=======
+
     virtual ~MovableElement();
-    virtual void move() = 0;
->>>>>>> Stashed changes
+    void move();
+
 };
 
 #endif // MOVABLEELEMENT_H

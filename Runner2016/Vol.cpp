@@ -7,6 +7,10 @@ Vol::Vol():
     std::cout << "Un bonus Vol a été crée" << std::endl;
 }
 
+Vol::~Vol() {
+
+}
+
 int Vol::getDuree()
 {
     return _duree;

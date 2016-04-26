@@ -10,6 +10,7 @@ private:
     int _duree;
 public:
     Vol();
+    virtual ~Vol();
 
     int getDuree();
     void setDuree(int duree);

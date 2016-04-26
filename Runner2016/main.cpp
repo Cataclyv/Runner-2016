@@ -12,8 +12,5 @@ using namespace std;
 int main()
 {
     Vol v1;
-    Medikit m1;
-    Invincibilite i1;
-    Piece p1;
 }
 
