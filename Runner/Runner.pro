@@ -6,11 +6,15 @@ CONFIG -= qt
 SOURCES += main.cpp \
     Model.cpp \
     MovableElement.cpp \
+<<<<<<< Updated upstream
     Bonus.cpp \
     Medikit.cpp \
     Piece.cpp \
     Invincibilite.cpp \
     Vol.cpp
+=======
+    Balle.cpp
+>>>>>>> Stashed changes
 
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra
 
@@ -22,9 +26,13 @@ qtcAddDeployment()
 HEADERS += \
     Model.h \
     MovableElement.h \
+<<<<<<< Updated upstream
     Bonus.h \
     Medikit.h \
     Piece.h \
     Invincibilite.h \
     Vol.h
+=======
+    Balle.h
+>>>>>>> Stashed changes
 
