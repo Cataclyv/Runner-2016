@@ -5,7 +5,12 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     Model.cpp \
-    MovableElement.cpp
+    MovableElement.cpp \
+    Bonus.cpp \
+    Medikit.cpp \
+    Piece.cpp \
+    Invincibilite.cpp \
+    Vol.cpp
 
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra
 
@@ -16,5 +21,10 @@ qtcAddDeployment()
 
 HEADERS += \
     Model.h \
-    MovableElement.h
+    MovableElement.h \
+    Bonus.h \
+    Medikit.h \
+    Piece.h \
+    Invincibilite.h \
+    Vol.h
 

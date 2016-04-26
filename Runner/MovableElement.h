@@ -10,7 +10,7 @@ protected :
 
 public:
     MovableElement(int x, int y, int w, int h, int dx, int dy);
-    virtual void move() = 0;
+    void move();
 };
 
 #endif // MOVABLEELEMENT_H
