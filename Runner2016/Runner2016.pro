@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     Model.cpp \
     MovableElement.cpp \
     Piece.cpp \
-    Vol.cpp
+    Vol.cpp \
+    Obstacle.cpp
     
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra
 
@@ -28,5 +29,6 @@ HEADERS += \
     Model.h \
     MovableElement.h \
     Piece.h \
-    Vol.h
+    Vol.h \
+    Obstacle.h
 

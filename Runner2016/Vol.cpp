@@ -11,13 +11,14 @@ Vol::~Vol() {
 
 }
 
-int Vol::getDuree()
+int Vol::getDuree() const
 {
+    std::cout << _duree << std::endl;
     return _duree;
 }
 
 void Vol::setDuree(int duree)
 {
     _duree = duree;
-    std::cout << "La duree de ce bonus est maintenant de : " << duree << std::endl;
+    std::cout << "La duree de ce bonus est de : " << duree << std::endl;
 }

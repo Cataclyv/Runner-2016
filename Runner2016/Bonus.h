@@ -11,7 +11,7 @@ protected:
 public:
     Bonus(int valeur);
 
-    int getVal();
+    int getVal() const;
 };
 
 #endif // BONUS_H

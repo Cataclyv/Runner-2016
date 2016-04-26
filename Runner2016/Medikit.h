@@ -11,7 +11,7 @@ private:
 public:
     Medikit();
 
-    int getSoins();
+    int getSoins() const;
     void setSoins(int montantSoins);
 };
 

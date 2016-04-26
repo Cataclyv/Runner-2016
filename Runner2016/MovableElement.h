@@ -14,6 +14,15 @@ public:
     virtual ~MovableElement();
     void move();
 
+    int getX() const;
+    int getY() const;
+    int getDx() const;
+    int getDy() const;
+    int getH() const;
+    int getW() const;
+
+    void setDx(int dx);
+    void setDy(int dy);
 };
 
 #endif // MOVABLEELEMENT_H

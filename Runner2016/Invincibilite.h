@@ -11,7 +11,7 @@ protected:
 public:
     Invincibilite();
 
-    int getDuree();
+    int getDuree() const;
     void setDuree(int duree);
 };
 

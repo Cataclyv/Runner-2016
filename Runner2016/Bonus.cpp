@@ -6,3 +6,8 @@ Bonus::Bonus(int valeur) :
 {
     std::cout<< "Un bonus a bien été crée" << std::endl;
 }
+
+int Bonus::getVal() const
+{
+    std::cout << _valPoints << std::endl;
+}

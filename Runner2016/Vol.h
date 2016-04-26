@@ -12,7 +12,7 @@ public:
     Vol();
     virtual ~Vol();
 
-    int getDuree();
+    int getDuree() const;
     void setDuree(int duree);
 };
 

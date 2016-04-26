@@ -7,13 +7,14 @@ Medikit::Medikit()
     std::cout << "Un Medikit a bien été crée" << std::endl;
 }
 
-int Medikit::getSoins()
+int Medikit::getSoins() const
 {
+    std::cout << _soins << std::endl;
     return _soins;
 }
 
 void Medikit::setSoins(int montantSoins)
 {
     _soins = montantSoins;
-    std::cout << "Les soins sont maintenant de" << _soins << std::endl;
+    std::cout << "Les soins sont de" << _soins << std::endl;
 }
