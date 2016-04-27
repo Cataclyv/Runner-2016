@@ -1,8 +1,7 @@
 #include "Vol.h"
 
-Vol::Vol():
-    Bonus(50),
-    _duree(5)
+Vol::Vol()
+    : Bonus(VAL_BONUS), _duree(5)
 {
     std::cout << "Un bonus Vol a été crée" << std::endl;
 }

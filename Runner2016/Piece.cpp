@@ -1,7 +1,6 @@
 #include "Piece.h"
 
-Piece::Piece()
-    :Bonus(10)
+Piece::Piece() : Bonus(VAL_PIECE)
 {
     std::cout << "Une Piece a été crée" << std::endl;
 }

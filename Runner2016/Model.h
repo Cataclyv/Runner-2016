@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Balle.h"
+#include "Score.h"
 
 const int MODEL_WIDTH = 800;
 const int MODEL_HEIGHT = 600;
@@ -13,10 +14,11 @@ private :
     int _w, _h;
     Balle *_balle;
     std::vector<MovableElement*> _elements;
+    Score *_scoreJoueur;
 public:
     Model();
     ~Model();
-    void nextStep();
+    bool nextStep();
     void deplacerBalle(bool aGauche);
 };
 
