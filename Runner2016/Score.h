@@ -3,10 +3,6 @@
 
 #include <string>
 
-const int VAL_PIECE = 10;
-const int VAL_BONUS = 50;
-const int VAL_CHUNK = 100;
-
 class Score
 {
 private :

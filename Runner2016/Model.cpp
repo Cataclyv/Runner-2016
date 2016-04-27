@@ -15,7 +15,7 @@ bool Model::nextStep() {
     for(auto e : _elements) {
         e->move();
     }
-    return true;
+    return false;
 }
 
 void Model::deplacerBalle(bool aGauche) {

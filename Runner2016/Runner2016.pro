@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     Piece.cpp \
     Vol.cpp \
     Obstacle.cpp \
-    Score.cpp
+    Score.cpp \
+    Chunk.cpp
     
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra
 
@@ -32,5 +33,6 @@ HEADERS += \
     Piece.h \
     Vol.h \
     Obstacle.h \
-    Score.h
+    Score.h \
+    Chunk.h
 

@@ -58,7 +58,8 @@ SOURCES       = ../Runner2016/main.cpp \
 		../Runner2016/Piece.cpp \
 		../Runner2016/Vol.cpp \
 		../Runner2016/Obstacle.cpp \
-		../Runner2016/Score.cpp 
+		../Runner2016/Score.cpp \
+		../Runner2016/Chunk.cpp 
 OBJECTS       = main.o \
 		Balle.o \
 		Bonus.o \
@@ -69,7 +70,8 @@ OBJECTS       = main.o \
 		Piece.o \
 		Vol.o \
 		Obstacle.o \
-		Score.o
+		Score.o \
+		Chunk.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -132,7 +134,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		Piece.h \
 		Vol.h \
 		Obstacle.h \
-		Score.h ../Runner2016/main.cpp \
+		Score.h \
+		Chunk.h ../Runner2016/main.cpp \
 		../Runner2016/Balle.cpp \
 		../Runner2016/Bonus.cpp \
 		../Runner2016/Invincibilite.cpp \
@@ -142,7 +145,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Runner2016/Piece.cpp \
 		../Runner2016/Vol.cpp \
 		../Runner2016/Obstacle.cpp \
-		../Runner2016/Score.cpp
+		../Runner2016/Score.cpp \
+		../Runner2016/Chunk.cpp
 QMAKE_TARGET  = Runner2016
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Runner2016
@@ -327,7 +331,10 @@ main.o: ../Runner2016/main.cpp ../Runner2016/Bonus.h \
 		../Runner2016/Piece.h \
 		../Runner2016/Vol.h \
 		../Runner2016/Medikit.h \
-		../Runner2016/Invincibilite.h
+		../Runner2016/Invincibilite.h \
+		../Runner2016/Model.h \
+		../Runner2016/Balle.h \
+		../Runner2016/Score.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Runner2016/main.cpp
 
 Balle.o: ../Runner2016/Balle.cpp ../Runner2016/Balle.h \
@@ -374,6 +381,10 @@ Obstacle.o: ../Runner2016/Obstacle.cpp ../Runner2016/Obstacle.h \
 
 Score.o: ../Runner2016/Score.cpp ../Runner2016/Score.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Score.o ../Runner2016/Score.cpp
+
+Chunk.o: ../Runner2016/Chunk.cpp ../Runner2016/Chunk.h \
+		../Runner2016/MovableElement.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Chunk.o ../Runner2016/Chunk.cpp
 
 ####### Install
 

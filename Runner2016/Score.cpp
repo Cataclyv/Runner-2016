@@ -6,9 +6,9 @@ Score::Score()
 }
 
 int Score::score() {
-    return _nbPieces * VAL_PIECE
-            + _nbBonus * VAL_BONUS
-            + _nbChunks * VAL_CHUNK;
+    return _nbPieces * 10
+            + _nbBonus * 50
+            + _nbChunks * 100;
 }
 
 void Score::plusPiece() {

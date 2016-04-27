@@ -6,6 +6,7 @@
 #include "Vol.h"
 #include "Medikit.h"
 #include "Invincibilite.h"
+#include "Model.h"
 
 using namespace std;
 
@@ -23,5 +24,11 @@ int main()
     m1.getVal();
     i1.getDuree();
     i1.getVal();
+
+    Model _model;
+
+    while(_model.nextStep()) {
+
+    }
 }
 
