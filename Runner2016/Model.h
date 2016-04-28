@@ -4,6 +4,7 @@
 #include <vector>
 #include "Balle.h"
 #include "Score.h"
+#include "Chunk.h"
 
 const int MODEL_WIDTH = 800;
 const int MODEL_HEIGHT = 600;

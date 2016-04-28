@@ -1,7 +1,7 @@
 #include "Medikit.h"
 
-Medikit::Medikit()
-    : Bonus(VAL_BONUS), _soins(25)
+Medikit::Medikit(int x)
+    : Bonus(x, VAL_BONUS), _soins(25)
 {
     std::cout << "Un Medikit a bien été crée" << std::endl;
 }

@@ -9,7 +9,7 @@ class Medikit : public Bonus
 private:
     int _soins;
 public:
-    Medikit();
+    Medikit(int x);
 
     int getSoins() const;
     void setSoins(int montantSoins);

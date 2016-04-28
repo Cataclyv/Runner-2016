@@ -4,6 +4,8 @@ Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}
 {
     _balle = new Balle();
     _scoreJoueur = new Score();
+
+    _elements.push_back(new Chunk(1));
 }
 
 Model::~Model() {

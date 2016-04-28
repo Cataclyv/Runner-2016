@@ -9,7 +9,7 @@ class Vol : public Bonus
 private:
     int _duree;
 public:
-    Vol();
+    Vol(int x);
     virtual ~Vol();
 
     int getDuree() const;

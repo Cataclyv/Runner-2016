@@ -9,7 +9,7 @@ class Invincibilite : public Bonus
 protected:
     int _duree;
 public:
-    Invincibilite();
+    Invincibilite(int x);
 
     int getDuree() const;
     void setDuree(int duree);

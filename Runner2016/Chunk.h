@@ -1,15 +1,19 @@
 #ifndef CHUNK_H
 #define CHUNK_H
 
-#include "MovableElement.h"
+#include "Obstacle.h"
+#include "Piece.h"
+#include "Medikit.h"
+#include "Vol.h"
+#include "Invincibilite.h"
 #include <vector>
 
 class Chunk : public MovableElement
 {
 private :
-    std::vector<MovableElement*> _conteneur;
+    std::vector<MovableElement*> _conteneur; // soit Bonus soit Obstacle
 public:
-    Chunk();
+    Chunk(int type);    // 1-> bonus, 2->obstacle
 };
 
 #endif // CHUNK_H

@@ -8,7 +8,7 @@ class Piece : public Bonus
 private:
 
 public:
-    Piece();
+    Piece(int x);
 };
 
 #endif // PIECE_H
