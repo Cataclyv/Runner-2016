@@ -25,6 +25,9 @@ public:
     void setY(int y);
     void setDx(int dx);
     void setDy(int dy);
+
+    bool enJeu();
+    bool collision(MovableElement mE1, MovableElement mE2);
 };
 
 #endif // MOVABLEELEMENT_H

@@ -10,6 +10,8 @@ const int PV_MAX = 100;
 class Balle : public MovableElement
 {
 private :
+    static const int CAP_PV = 100;
+    int _score;
     int _pv;
     bool _enSaut;
 public:
@@ -24,6 +26,10 @@ public:
     void setDx(int dx);
     void setPv(int pv);
     void setEnSaut(bool saut);
+    void augScore(int x);
+
+    void estInvincible();
+    void estVolant();
 };
 
 #endif // BALLE_H

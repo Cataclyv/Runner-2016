@@ -61,3 +61,15 @@ void MovableElement::setDy(int dy)
 {
     _dy = dy;
 }
+
+bool MovableElement::enJeu()
+{
+    if((_x+_w)<0)
+        return false;
+    return true;
+}
+
+bool collision(MovableElement elem1, MovableElement elem2)
+{
+    //A faire
+}

@@ -1,6 +1,6 @@
 #include "Model.h"
 
-Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}
+Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}, _collision(false)
 {
     _balle = new Balle();
     _scoreJoueur = new Score();
@@ -10,12 +10,17 @@ Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}
 }
 
 Model::~Model() {
-
+    delete _balle;
+    for(MovableElement* x : _elements)
+        delete x;
 }
+
 
     // Quand le jeu sera Game Over, retourne FALSE
 bool Model::nextStep() {
     for(auto e : _elements) {
+        if(e->enJeu) //si le movable element sort du jeu
+            _elements.erase(e);
         e->move();
     }
 
@@ -40,4 +45,24 @@ void Model::deplacerBalle(bool aGauche) {
     _balle->move();
 }
 
+
+void Model::sautBalle()
+{
+    _joueur->enSaut();
+}
+
+bool Model::collision()
+{
+    return _collision;
+}
+
+int Model::getScore()
+{
+    return _joueur->getScore();
+}
+
+sf::Vector2f Model::getBalleDimension() const
+{
+    return sf::Vector2f(_joueur->getW(),_joueur->getH());
+}
 
