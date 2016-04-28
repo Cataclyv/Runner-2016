@@ -20,8 +20,15 @@ bool Model::nextStep() {
     }
 
     if(_balle->getEnSaut() && _balle->getX() < HAUTEUR_SAUT)
+    {
         _balle->setX(_balle->getX()+2);
-
+        if(_balle->getX() >= HAUTEUR_SAUT )
+            _balle->setEnSaut(false);
+    }
+    else if(!_balle->getEnSaut() && _balle->getY() > 10)
+    {
+        _balle->setY(_balle->getY()-2);
+    }
     return false;
 }
 

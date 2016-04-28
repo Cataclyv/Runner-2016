@@ -22,6 +22,7 @@ public:
     int getW() const;
 
     void setX(int x);
+    void setY(int y);
     void setDx(int dx);
     void setDy(int dy);
 };
