@@ -10,11 +10,7 @@ private:
     int _dommages;
 public:
     Obstacle(int x, int y, int h, int w, int dx, int dy);
-
-/*  C'est censé être géré dans le Model
-    void BlesserJoueur(Balle b);
-
-    int getDommages() const;*/
+    void move();
 };
 
 #endif // OBSTACLE_H

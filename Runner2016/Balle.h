@@ -26,10 +26,6 @@ public:
     void setDx(int dx);
     void setPv(int pv);
     void setEnSaut(bool saut);
-    void augScore(int x);
-
-    void estInvincible();
-    void estVolant();
 };
 
 #endif // BALLE_H

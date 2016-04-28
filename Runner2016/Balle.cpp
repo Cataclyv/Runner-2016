@@ -33,8 +33,3 @@ void Balle::setPv(int pv) {
 void Balle::setEnSaut(bool saut) {
     _enSaut = saut;
 }
-
-void Balle::estInvincible()
-{
-
-}

@@ -47,13 +47,13 @@ Chunk::Chunk(int x, int type)
             case 0 :
                 if(_conteneur[i] == nullptr)
                 {
-                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, TAILLE, 1, 0);
+                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, TAILLE, -1, 0);
                 }
                 break;
             case 1 :
                 if(_conteneur[i] == nullptr)
                 {
-                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, 2*TAILLE, 1, 0);
+                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, 2*TAILLE, -1, 0);
                 }
                 break;
             case 2 :
@@ -68,4 +68,22 @@ Chunk::Chunk(int x, int type)
         } break;
     }
     std::cout << std::endl;
+}
+
+void Chunk::move() {
+    for(auto e : _conteneur)
+        e->move();
+}
+
+// Détecte s'il y a collision entre la balle et un des éléments du chunk
+bool Chunk::collision(Balle *_balle) const {
+    bool collision_detectee = false;
+    for(auto e : _conteneur) {
+        if((_balle->getX()+_balle->getW() > e->getX() && _balle->getX()+_balle->getW() < e->getX()+e->getW())
+                || (_balle->getX() > e->getX() && _balle->getX() < e->getX()+e->getW()))
+        {
+            collision_detectee = true;
+        }
+    }
+    return collision_detectee;
 }

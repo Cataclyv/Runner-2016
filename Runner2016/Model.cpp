@@ -1,12 +1,15 @@
 #include "Model.h"
 
-Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}, _collision(false)
+Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}
 {
     _balle = new Balle();
     _scoreJoueur = new Score();
 
-    _elements.push_back(new Chunk(0, 1));
-    _elements.push_back(new Chunk(120, 2));
+    int ecart = 20;
+    for(int i=MODEL_WIDTH ; i<NB_CHUNKS ; i++)
+    {
+        ajouterChunk(i*100+ecart);
+    }
 }
 
 Model::~Model() {
@@ -15,25 +18,49 @@ Model::~Model() {
         delete x;
 }
 
+void Model::ajouterChunk(int x) {
+    int determination_chunk = rand()%100;
+    if(determination_chunk < 50)
+        _elements.push_back(new Chunk(x, 2));
+    else if(determination_chunk < 75)
+        _elements.push_back(new Chunk(x, 1));
+    else
+        _elements.push_back(new Chunk(x, 0));
+}
+
 
     // Quand le jeu sera Game Over, retourne FALSE
 bool Model::nextStep() {
+
     for(auto e : _elements) {
-        if(e->enJeu) //si le movable element sort du jeu
-            _elements.erase(e);
+
+        if(!e->enJeu()) //si le MovableElement sort du jeu
+            _elements.pop_back();
+
+        if(_elements.size() < NB_CHUNKS) {  // crée un nouveau Chunk quand il en manque
+            ajouterChunk(1020);
+        }
         e->move();
     }
 
-    if(_balle->getEnSaut() && _balle->getX() < HAUTEUR_SAUT)
+    if(_balle->getEnSaut() && _balle->getY() < HAUTEUR_SAUT)
     {
-        _balle->setX(_balle->getX()+2);
+        _balle->setDy(1);
         if(_balle->getX() >= HAUTEUR_SAUT )
             _balle->setEnSaut(false);
     }
     else if(!_balle->getEnSaut() && _balle->getY() > 10)
     {
-        _balle->setY(_balle->getY()-2);
+        _balle->setDy(-1);
     }
+    _balle->move();
+
+    for(auto e : _elements) {
+        if(contientBalle(e)) {
+
+        }
+    }
+
     return false;
 }
 
@@ -43,26 +70,16 @@ void Model::deplacerBalle(bool aGauche) {
     else
         _balle->setDx(1);
     _balle->move();
+    _balle->setDx(0);
 }
 
-
-void Model::sautBalle()
+bool Model::contientBalle(Chunk *e) const
 {
-    _joueur->enSaut();
+    bool contient = false;
+    if((_balle->getX()+_balle->getW() > e->getX() && _balle->getX()+_balle->getW() < e->getX()+e->getW())
+            || (_balle->getX() > e->getX() && _balle->getX() < e->getX()+e->getW()))
+    {
+        contient = true;
+    }
+    return contient;
 }
-
-bool Model::collision()
-{
-    return _collision;
-}
-
-int Model::getScore()
-{
-    return _joueur->getScore();
-}
-
-sf::Vector2f Model::getBalleDimension() const
-{
-    return sf::Vector2f(_joueur->getW(),_joueur->getH());
-}
-

@@ -18,6 +18,8 @@ public:
     Bonus();
     Bonus(int x, int valeur);
 
+    void move();
+
     int getVal() const;
 
 };

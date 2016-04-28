@@ -10,11 +10,6 @@ Vol::~Vol() {
 
 }
 
-void Vol::applicationBonus(Balle* b)
-{
-    b->estInvincible();
-}
-
 int Vol::getDuree() const
 {
     std::cout << _duree << std::endl;
