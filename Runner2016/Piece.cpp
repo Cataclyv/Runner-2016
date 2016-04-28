@@ -5,7 +5,6 @@ Piece::Piece(int x) : Bonus(x, VAL_PIECE)
     std::cout << " -> Piece" << std::endl;
 }
 
-void applicationBonus(Balle* b)
-{
-
+std::string Piece::getType() const {
+    return "Piece";
 }

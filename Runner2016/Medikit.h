@@ -7,15 +7,16 @@
 
 class Medikit : public Bonus
 {
-private:
+private :
     int _soins;
-public:
+public :
+    Medikit();
     Medikit(int x);
 
-    void applicationBonus(Balle* b);
-
-    int getSoins() const;
+    int getSoins();
     void setSoins(int montantSoins);
+
+    virtual std::string getType() const;
 };
 
 #endif // MEDIKIT_H

@@ -1,6 +1,9 @@
 #ifndef MOVABLEELEMENT_H
 #define MOVABLEELEMENT_H
 
+#include <string>
+#include <iostream>
+
 class MovableElement
 {
 protected :
@@ -27,6 +30,8 @@ public:
     void setDy(int dy);
 
     bool enJeu();
+
+    virtual std::string getType() const;
 };
 
 #endif // MOVABLEELEMENT_H

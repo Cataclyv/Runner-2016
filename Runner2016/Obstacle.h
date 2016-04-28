@@ -11,6 +11,7 @@ private:
 public:
     Obstacle(int x, int y, int h, int w, int dx, int dy);
     void move();
+    std::string getType() const;
 };
 
 #endif // OBSTACLE_H

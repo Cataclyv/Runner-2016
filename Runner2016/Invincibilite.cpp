@@ -17,3 +17,7 @@ void Invincibilite::setDuree(int duree)
     _duree = duree;
     std::cout << "La duree de ce bonus est de : " << duree << std::endl;
 }
+
+std::string Invincibilite::getType() const {
+    return "Invincibilite";
+}

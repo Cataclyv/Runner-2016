@@ -9,3 +9,7 @@ Obstacle::Obstacle(int x, int y, int h, int w, int dx, int dy):
 void Obstacle::move() {
     _x += _dx;
 }
+
+std::string Obstacle::getType() const {
+    return "Obstacle";
+}

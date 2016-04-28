@@ -16,6 +16,8 @@ public:
 
     int getDuree() const;
     void setDuree(int duree);
+
+    virtual std::string getType() const;
 };
 
 #endif // INVINCIBILITE_H

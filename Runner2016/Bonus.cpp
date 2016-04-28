@@ -18,3 +18,7 @@ int Bonus::getVal() const
 {
     std::cout << _valPoints << std::endl;
 }
+
+std::string Bonus::getType() const {
+    return "Bonus";
+}

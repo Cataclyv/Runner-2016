@@ -71,6 +71,7 @@ Chunk::Chunk(int x, int type)
 }
 
 void Chunk::move() {
+    _x += _dx;
     for(auto e : _conteneur)
         e->move();
 }
@@ -86,4 +87,8 @@ bool Chunk::collision(Balle *_balle) const {
         }
     }
     return collision_detectee;
+}
+
+std::string Chunk::objetTouche() const {
+    return _conteneur[0]->getType();
 }

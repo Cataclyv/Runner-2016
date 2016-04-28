@@ -7,6 +7,7 @@
 #include "Vol.h"
 #include "Invincibilite.h"
 #include <vector>
+#include <string>
 
 class Chunk : public MovableElement
 {
@@ -16,6 +17,7 @@ public:
     Chunk(int x, int type);    // 1-> bonus, 2->obstacle, autre->rien
     void move();
     bool collision(Balle *_balle) const; // Détermine s'il y a collision entre la balle et un élément
+    std::string objetTouche() const;
 };
 
 #endif // CHUNK_H

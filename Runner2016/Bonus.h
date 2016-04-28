@@ -22,6 +22,8 @@ public:
 
     int getVal() const;
 
+    virtual std::string getType() const;
+
 };
 
 #endif // BONUS_H

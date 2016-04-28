@@ -68,3 +68,7 @@ bool MovableElement::enJeu()
         return false;
     return true;
 }
+
+std::string MovableElement::getType() const {
+    return "Objet inconnu";
+}

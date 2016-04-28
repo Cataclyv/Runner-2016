@@ -11,7 +11,7 @@ private:
 public:
     Piece(int x);
 
-    void applicationBonus(Balle* b);
+    virtual std::string getType() const;
 };
 
 #endif // PIECE_H

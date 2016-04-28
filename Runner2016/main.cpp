@@ -13,9 +13,10 @@ using namespace std;
 int main()
 {
     Model _model;
+    bool enJeu = true;
 
-    while(_model.nextStep()) {
-
+    while(enJeu) {
+        enJeu = _model.nextStep();
     }
 }
 
