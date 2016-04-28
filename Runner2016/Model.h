@@ -8,6 +8,7 @@
 
 const int MODEL_WIDTH = 800;
 const int MODEL_HEIGHT = 600;
+const int HAUTEUR_SAUT = 100;
 
 class Model
 {

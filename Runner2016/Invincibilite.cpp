@@ -3,7 +3,7 @@
 Invincibilite::Invincibilite(int x)
     : Bonus(x, VAL_BONUS), _duree(5)
 {
-    std::cout << "Un bonus Invincibilite a été crée" << std::endl;
+    std::cout << " -> Invincibilite" << std::endl;
 }
 
 int Invincibilite::getDuree() const

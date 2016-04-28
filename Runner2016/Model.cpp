@@ -18,6 +18,10 @@ bool Model::nextStep() {
     for(auto e : _elements) {
         e->move();
     }
+
+    if(_balle->getEnSaut() && _balle->getX() < HAUTEUR_SAUT)
+        _balle->setX(_balle->getX()+2);
+
     return false;
 }
 

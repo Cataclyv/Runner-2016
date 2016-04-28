@@ -44,6 +44,10 @@ int MovableElement::getW() const
     return _w;
 }
 
+void MovableElement::setX(int x) {
+    _x = x;
+}
+
 void MovableElement::setDx(int dx)
 {
     _dx = dx;

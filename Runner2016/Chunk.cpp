@@ -12,7 +12,7 @@ Chunk::Chunk(int x, int type)
     switch(type)
     {
 
-    case 1 : {
+    case 1 : {  // Insertion et déterminisation des bonus
         int emplacement_bonus = rand()%5;
         int type_bonus = rand()%3;
         Bonus *_bonus;
@@ -37,7 +37,7 @@ Chunk::Chunk(int x, int type)
         }
          } break;
 
-    case 2 : {
+    case 2 : {  // Insertion et déterminisation des obstacles
         int type_o = 0;
         for(int i=0; i<_conteneur.size() ; i++)
         {
@@ -57,7 +57,7 @@ Chunk::Chunk(int x, int type)
                 }
                 break;
             case 2 :
-                std::cout << "Pas d'obstacle ici" << std::endl;
+                std::cout << "Pas d'obstacle à (" << _x+TAILLE*i << ", " << _y << ")" << std::endl;
                 break;
             }
         }
@@ -67,4 +67,5 @@ Chunk::Chunk(int x, int type)
 
         } break;
     }
+    std::cout << std::endl;
 }

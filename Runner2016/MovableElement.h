@@ -21,6 +21,7 @@ public:
     int getH() const;
     int getW() const;
 
+    void setX(int x);
     void setDx(int dx);
     void setDy(int dy);
 };

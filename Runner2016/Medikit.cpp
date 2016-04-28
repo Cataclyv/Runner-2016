@@ -3,7 +3,7 @@
 Medikit::Medikit(int x)
     : Bonus(x, VAL_BONUS), _soins(25)
 {
-    std::cout << "Un Medikit a bien été crée" << std::endl;
+    std::cout << " -> Medikit" << std::endl;
 }
 
 int Medikit::getSoins() const

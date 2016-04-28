@@ -3,7 +3,7 @@
 Vol::Vol(int x)
     : Bonus(x, VAL_BONUS), _duree(5)
 {
-    std::cout << "Un bonus Vol a été crée" << std::endl;
+    std::cout << " -> Vol" << std::endl;
 }
 
 Vol::~Vol() {
