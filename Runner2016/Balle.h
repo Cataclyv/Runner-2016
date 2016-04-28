@@ -3,8 +3,8 @@
 
 #include "MovableElement.h"
 
-const int W_BALLE = 100;
-const int H_BALLE = 100;
+const int W_BALLE = 10;
+const int H_BALLE = 10;
 const int PV_MAX = 100;
 
 class Balle : public MovableElement

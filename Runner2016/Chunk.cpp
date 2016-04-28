@@ -1,8 +1,8 @@
 #include "Chunk.h"
 #include <cstdlib>
 
-Chunk::Chunk(int type)
-    : MovableElement{1, 1, 100, 100, -1, 0}
+Chunk::Chunk(int x, int type)
+    : MovableElement{x, 10, 100, 100, -1, 0}
 {
     _conteneur.resize(5);
     for(int j=0 ; j<_conteneur.size() ; j++)
@@ -13,8 +13,8 @@ Chunk::Chunk(int type)
     {
 
     case 1 : {
-        int emplacement_bonus = rand()%4;
-        int type_bonus = rand()%2;
+        int emplacement_bonus = rand()%5;
+        int type_bonus = rand()%3;
         Bonus *_bonus;
 
         switch(type_bonus)
@@ -38,6 +38,29 @@ Chunk::Chunk(int type)
          } break;
 
     case 2 : {
+        int type_o = 0;
+        for(int i=0; i<_conteneur.size() ; i++)
+        {
+            type_o = rand()%3;
+            switch(type_o)
+            {
+            case 0 :
+                if(_conteneur[i] == nullptr)
+                {
+                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, TAILLE, 1, 0);
+                }
+                break;
+            case 1 :
+                if(_conteneur[i] == nullptr)
+                {
+                    _conteneur[i] = new Obstacle(_x+TAILLE*i, _y, TAILLE, 2*TAILLE, 1, 0);
+                }
+                break;
+            case 2 :
+                std::cout << "Pas d'obstacle ici" << std::endl;
+                break;
+            }
+        }
         } break;
 
     default : {

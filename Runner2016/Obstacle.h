@@ -1,6 +1,7 @@
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
 
+#include <iostream>
 #include "Balle.h"
 
 class Obstacle : public MovableElement
