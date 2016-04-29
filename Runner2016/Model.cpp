@@ -4,18 +4,20 @@ Model::Model() : _w{MODEL_WIDTH}, _h {MODEL_HEIGHT}, _degatsObstacle{25}
 {
     _balle = new Balle();
     _scoreJoueur = new Score();
+}
 
+Model::~Model() {
+    delete _balle;
+    for(Chunk* c : _elements)
+        delete c;
+}
+
+void Model::remplirModel() {
     int ecart = 20;
     for(int i=0 ; i<NB_CHUNKS ; i++)
     {
         ajouterChunk(i*100+ecart);
     }
-}
-
-Model::~Model() {
-    delete _balle;
-    for(MovableElement* x : _elements)
-        delete x;
 }
 
 void Model::ajouterChunk(int x) {
@@ -28,6 +30,19 @@ void Model::ajouterChunk(int x) {
         _elements.push_back(new Chunk(x, 0));
 }
 
+void Model::ajouterChunk(int x, char type) {
+    switch(type) {
+    case 'v' :
+        _elements.push_back(new Chunk(x, 0));
+        break;
+    case 'o' :
+        _elements.push_back(new Chunk(x, 2));
+        break;
+    case 'b' :
+         _elements.push_back(new Chunk(x, 1));
+        break;
+    }
+}
 
     // Quand le jeu sera Game Over, retourne FALSE
 bool Model::nextStep() {

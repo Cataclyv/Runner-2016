@@ -5,7 +5,6 @@
 #include "Score.h"
 #include "Chunk.h"
 #include <vector>
-#include <unistd.h>
 
 const int MODEL_WIDTH = 800;
 const int MODEL_HEIGHT = 600;
@@ -25,11 +24,13 @@ public:
     Model();
     ~Model();
 
+    void remplirModel();    // A exécuter au lancement du jeu
     void ajouterChunk(int x);
+    void ajouterChunk(int x, char type);    // Réservée aux tests
     bool nextStep();
     void deplacerBalle(bool aGauche);
 
-    bool contientBalle(Chunk *c) const;
+    bool contientBalle(Chunk *c) const; // Renvoie si le chunk en paramètre contient la balle
 };
 
 #endif // MODEL_H
